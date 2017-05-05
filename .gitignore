@@ -1,0 +1,25 @@
+# Java class files
+*.class
+
+# generated folders and files
+**/bin
+**/gen
+**/target
+**/build
+*.bin
+
+# Gradle
+**/.gradle
+
+# Cahches
+*.cache-main
+*.cache-tests
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+.recommenders/
