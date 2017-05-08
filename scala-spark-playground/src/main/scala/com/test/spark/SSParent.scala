@@ -41,8 +41,13 @@ object SSParent {
   private val MASTER = "local[*]"
 
   private def getSqlContext() = {
+    // Create the Spark Configuration
+    val sparkConf = new SparkConf
+    sparkConf.setMaster(MASTER)
+    sparkConf.setAppName(APPNAME)
+    sparkConf.set("spark.driver.host", "localhost")
     // Create the Spark Context
-    val sc: SparkContext = new SparkContext(master = MASTER, appName = APPNAME, new SparkConf)
+    val sc: SparkContext = new SparkContext(sparkConf)
     sc.setLogLevel("ERROR")
     // Create the Sql context
     new org.apache.spark.sql.SQLContext(sc)
